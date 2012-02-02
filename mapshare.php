@@ -4,7 +4,7 @@ session_start();
 require_once("mapshare.class.php");
 
 // for debugging
-require_once("../FirePHPCore/fb.php");
+require_once("FirePHPCore/fb.php");
 
 if(isset($_SESSION['kamei_id'])) {
 	$kamei_id = $_SESSION['kamei_id'];
@@ -66,7 +66,7 @@ if($mode == 'init') {
 		} else {
 			$status = "WARNING: [write][read] kamei_id existed, but database was corrupted [$reason], row reinitialized";
 		}
-	} 
+	}
 } else if($mode == 'send') {
 	$status = "OK: [write][read] row updated";
 	if(isset($_POST['newMarkers'])) {
