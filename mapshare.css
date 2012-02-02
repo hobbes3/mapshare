@@ -1,0 +1,73 @@
+body {
+	font-family: helvetica, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	font-size: 15px;
+}
+
+#title {
+	font-weight: bold;
+	left: 50px;
+	top: 600px;
+	font-size: 25px;
+	position: absolute;
+}
+
+/*#map {
+	left: 50px;
+	top: 0px;
+	padding: 0px;
+	width: 1550px;
+	height: 600px;
+	position: absolute;
+}*/
+
+#map {
+	left: 0px;
+	top: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 600px;
+	position: absolute;
+}
+
+#status {
+	left: 1500px;
+	top: 600px;
+	position: absolute;
+	background: red;
+	color: white;  
+	font-family: helvetica, sans-serif;
+	font-weight: bold;
+	border: white 1px solid;
+	border-spacing: 0px;
+	padding: 0px;
+	width: 100px;
+	text-align: center;
+}
+
+#directions {
+	left: 310px;
+	top: 600px;   
+	position: absolute;
+	z-index: 1;
+}
+
+#controls {
+	left: 920px;
+	top: 600px;   
+	position: absolute;
+	z-index: 1;
+}
+
+#B_row, #createMarkerB_Button, #getDirectionsButton {
+	visibility: hidden;
+}
+
+#debug {
+	left: 80px;
+	top: 635px; 
+	position: absolute;
+	font-family: courier, serif;
+	visibility: hidden;
+}
