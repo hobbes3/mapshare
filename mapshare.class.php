@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+require_once('db_config.php');
 require_once('error_handler.php');
 
 class Map {
@@ -258,7 +258,7 @@ class Map {
 								"<mode>$mode</mode>" .
 								"</request>" .
 		            "<status>$status</status>";
-								
+
 		//if(strpos($status, 'retrieved') !== false) {
 			$kamei_id = $this -> mMysqli -> real_escape_string($kamei_id);
 			//$user     = $this -> mMysqli -> real_escape_string($user);
@@ -284,7 +284,7 @@ class Map {
 			$result = $this -> mMysqli -> query($sqlCommand);
 			$row = $result -> fetch_array(MYSQLI_ASSOC);
 			$result -> close();
-			
+
 			$response .= "<view>";
 			foreach($dataViewTypes as $value) {
 				$response .= "<$value>" . $row[$value] . "</$value>";
@@ -298,14 +298,14 @@ class Map {
 
 		// clear the output
 		if(ob_get_length()) ob_clean();
-		
+
 		// to prevent caching
 		header('Expires: Fri, 25 Dec 1980 00:00:00 GMT'); // time in the past
 		header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . 'GMT');
 		header('Cache-Control: no-cache, must-revalidate');
 		header('Pragma: no-cache');
 		header('Content-Type: text/xml');
-		
+
 		echo $response;
 	}
 }
