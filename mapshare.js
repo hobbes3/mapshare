@@ -14,7 +14,7 @@ var status;
 var lat  = 32.5;
 var lng  = 175;
 var zoom = 3;
-var mapType = "roadmap";
+var mapType = "ROADMAP";
 
 var newMarkersToSend      = new Array();
 var markersLocal          = new Array();
@@ -37,13 +37,14 @@ function init() {
 	// debugging only available in Firefox's FireBug
 	if(typeof console === "undefined") {
 		console = {
-			log:            function() {},
-			//groupCollapsed: function() {},
-			//groupEnd:       function() {},
-			warn:           function() {},
-			info:           function() {}
+			log:  function() {},
+			warn: function() {},
+			info: function() {}
 		};
 	}
+
+    new Draggable('control');
+    new Draggable('debug');
 
 	console.log(modifiedMarkersToSend);
 
@@ -67,7 +68,7 @@ function init() {
 	google.maps.event.addListener(map, 'zoom_changed', function() { eventZoomChanged(); });
 	//google.maps.event.addListener(map, 'dragend', function() { eventDragEnd(); });
 	google.maps.event.addListener(map, 'click', function(event) { eventClick(event.latLng); });
-	google.maps.event.addListener(map, 'mapTypeId_changed', function() { eventMapTypeChanged(); });
+	google.maps.event.addListener(map, 'maptypeid_changed', function() { eventMapTypeChanged(); });
 	//google.maps.event.addListener(map, 'tilesloaded', function() { eventTilesLoaded(); });
 
 	debugUpdateCenter();
@@ -76,7 +77,7 @@ function init() {
 	debugUpdateTiles();
 
 	if(debugMode) {
-		document.getElementById("B_row").style.visibility             = "visible";
+		document.getElementById("B_row").style.visibility                = "visible";
 		document.getElementById("createMarkerB_Button").style.visibility = "visible";
 		document.getElementById("getDirectionsButton").style.visibility  = "visible";
 		document.getElementById("debug").style.visibility                = "visible";
@@ -676,7 +677,7 @@ function createSingleMarker(location, markerText, markerWindowOpen, id) {
 
 	if(debugMode) {
 		google.maps.event.addListener(marker, 'mouseover', function() {
-			document.getElementById("debug_markerId").innerHTML = marker.id;
+			document.getElementById("debug_markerId").innerHTML         = marker.id;
 			document.getElementById("debug_markerWindowOpen").innerHTML = marker.windowOpen;
 		});
 

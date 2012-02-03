@@ -36,6 +36,8 @@ $pageContents = <<< EOPAGE
 		<link href = "mapshare.css" rel = "stylesheet" type = "text/css"/>
 
         <script type = "text/javascript" src = "http://maps.google.com/maps/api/js?key=AIzaSyCNoZIIJIgDFab5EKGXreee7xZBHafc6wM&sensor=false"></script>
+        <script type = "text/javascript" src = "scriptaculous/prototype.js"></script>
+        <script type = "text/javascript" src = "scriptaculous/scriptaculous.js"></script>
         <script type = "text/javascript">
             var debugMode = $debug;
         </script>
@@ -44,31 +46,32 @@ $pageContents = <<< EOPAGE
 	<body>
 		<noscript>This application requires JavaScript!!</noscript>
 
-		<div id = "title">MapShare $version</div>
-
 		<div id = "map"></div>
 
-		<div id = "status">Idle...</div>
+        <div id = "control">
+            <img src = "MapShareLogo.png"/>
+            <div id = "status">Idle...</div>
 
-		<div id = "directions">
-			<table>
-				<tr id = "A_row">
-					<td>A:</td><td><input id = "addressA" type = "text" size = "100"/></td>
-				</tr>
-				<tr id = "B_row">
-					<td>B:</td><td><input id = "addressB" type = "text" size = "100"/></td>
-				</tr>
-			</table>
-			<input id = "createMarkerA_Button" type = "button" onclick = "createMarkerFromAddress('A');" value = "Create a marker at A"/>
-			<input id = "createMarkerB_Button" type = "button" onclick = "createMarkerFromAddress('B');" value = "Create a marker at B"/>
-			<input id = "getDirectionsButton" type = "button" onclick = "getDirections();" value = "Get directions from A to B"/>
-		</div>
+            <div id = "directions">
+                <table>
+                    <tr id = "A_row">
+                        <td>A:</td><td><input id = "addressA" type = "text" size = "50"/></td>
+                    </tr>
+                    <tr id = "B_row">
+                        <td>B:</td><td><input id = "addressB" type = "text" size = "50"/></td>
+                    </tr>
+                </table>
+                <input id = "createMarkerA_Button" type = "button" onclick = "createMarkerFromAddress('A');" value = "Create a marker at A"/>
+                <input id = "createMarkerB_Button" type = "button" onclick = "createMarkerFromAddress('B');" value = "Create a marker at B"/>
+                <input id = "getDirectionsButton" type = "button" onclick = "getDirections();" value = "Get directions from A to B"/>
+            </div>
 
-		<div id = "controls">
-			<input id = "clearMarkersButton" type = "button" onclick = "deleteAllMarkers(false);" value = "Delete all markers"/>
-			<input id = "openAllInfoWindowButton" type = "button" onclick = "openAllInfoWindows();" value = "Open all info windows"/>
-			<input id = "closeAllInfoWindowButton" type = "button" onclick = "closeAllInfoWindows();" value = "Close all info windows"/>
-		</div>
+            <div id = "controls">
+                <input id = "clearMarkersButton" type = "button" onclick = "deleteAllMarkers(false);" value = "Delete all markers"/>
+                <input id = "openAllInfoWindowButton" type = "button" onclick = "openAllInfoWindows();" value = "Open all info windows"/>
+                <input id = "closeAllInfoWindowButton" type = "button" onclick = "closeAllInfoWindows();" value = "Close all info windows"/>
+            </div>
+        </div>
 
 		<div id="debug">
 			<b>==DEBUG==</b><br/>
