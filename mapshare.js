@@ -14,7 +14,7 @@ var status;
 var lat  = 32.5;
 var lng  = 175;
 var zoom = 3;
-var mapType = "ROADMAP";
+var mapType = "roadmap";
 
 var newMarkersToSend      = new Array();
 var markersLocal          = new Array();

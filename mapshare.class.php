@@ -56,7 +56,7 @@ class Map {
 			return "longtitude value was out of bounds";
 		if($zoom < 0 || $zoom > 22)
 			return "zoom value was out of bounds";
-		if($mapType != 'SATELLITE' && $mapType != 'ROADMAP' && $mapType != 'HYBRID' && $mapType != 'TERRAIN')
+		if($mapType != 'satellite' && $mapType != 'roadmap' && $mapType != 'hybrid' && $mapType != 'terrain')
 			return "map type was invalid";
 		if($marker_count < 0)
 			return "marker count was negative";

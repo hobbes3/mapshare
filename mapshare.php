@@ -45,7 +45,7 @@ function doInsertData($map, $mode, $kamei_id, $user, $status) {
 			$dataArray['lat']           = 32.5;
 			$dataArray['lng']           = 175;
 			$dataArray['zoom']          = 3;
-			$dataArray['mapType']       = "ROADMAP";
+			$dataArray['mapType']       = "roadmap";
 			$dataArray['marker_count']  = 0;
 			$dataArray['marker_lastId'] = 0;
 			$dataArray['markers'] = '';
