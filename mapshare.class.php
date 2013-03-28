@@ -119,7 +119,7 @@ class Map {
 		$kamei_id = $dataArray['kamei_id'];
 		unset($dataArray['kamei_id']);
 		$user = $dataArray['user'];
-		$date = str_replace('+',  '.' . date('u') . '+', date('c'));
+        $date = date("Y-m-d H:i:s", time());
 		$sqlCommand = "";
 
 		if($mode == 'init') {

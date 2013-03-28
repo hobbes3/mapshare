@@ -46,7 +46,7 @@ function init() {
     new Draggable('control');
     new Draggable('debug');
 
-	console.log(modifiedMarkersToSend);
+	console.log("modifiedMarkersToSend", modifiedMarkersToSend);
 
 	//console.log("init(): mode: " + xmlRequestInfo.mode);
 	status = document.getElementById("status");
@@ -600,7 +600,8 @@ function eventClick(location) {
 			} else {
 				markerText = status;
 			}
-			//console.log("evenClick(): " + markerText);
+			console.log("evenClick(): " + markerText);
+            console.log("markersLocalUnidentified", markersLocalUnidentified);
 			createSingleMarker(location, markerText, true, markersLocalUnidentified);
 			markersLocalUnidentified--;
 		});

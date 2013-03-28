@@ -35,7 +35,7 @@ $pageContents = <<< EOPAGE
 		<meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8"/>
 		<link href = "mapshare.css" rel = "stylesheet" type = "text/css"/>
 
-        <script type = "text/javascript" src = "http://maps.google.com/maps/api/js?key=AIzaSyCNoZIIJIgDFab5EKGXreee7xZBHafc6wM&sensor=false"></script>
+        <script type = "text/javascript" src = "http://maps.google.com/maps/api/js?key=AIzaSyBwaqPKn9s1CGHSEv0IXDOlLSlTzutD2lw&sensor=false"></script>
         <script type = "text/javascript" src = "scriptaculous/prototype.js"></script>
         <script type = "text/javascript" src = "scriptaculous/scriptaculous.js"></script>
         <script type = "text/javascript">
